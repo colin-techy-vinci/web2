@@ -17,17 +17,9 @@ interface Drink {
   price: number;
 }
 
-interface Film {
-  id : number;
-  title : string;
-  director : string;
-  duration : number;
-  budget : number | undefined;
-  description : string | undefined;
-  imageUrl : string | undefined;
-}
 
+type NewDrink = Omit<Drink, "id">;
 
 type NewPizza = Omit<Pizza, "id">;
 
-export type { Pizza, NewPizza, PizzaToUpdate, Drink, Film };
+export type { Pizza, NewPizza, PizzaToUpdate, Drink, NewDrink};
