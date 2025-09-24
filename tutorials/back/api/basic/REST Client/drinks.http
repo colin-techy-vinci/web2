@@ -15,3 +15,11 @@ Content-Type: application/json
     "volume":0.25,
     "price":4.5    
 }
+
+### Update the drink identified by 5
+PATCH {{baseUrl}}/drinks/5
+Content-Type: application/json
+
+{
+    "title":"Citronnade"
+}

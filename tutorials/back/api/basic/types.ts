@@ -17,7 +17,6 @@ interface Drink {
   price: number;
 }
 
-
 type NewDrink = Omit<Drink, "id">;
 
 type NewPizza = Omit<Pizza, "id">;
