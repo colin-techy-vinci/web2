@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:3000
+### Read all films with File variable
+GET {{baseUrl}}/films
+
+###
+GET {{baseUrl}}/films/3
+
+### Create a drink
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+  "title": "The Matrix",
+  "director": "Lana Wachowski, Lilly Wachowski",
+  "duration": 12,
+  "description": "https://www.imdb.com/title/tt0133093/",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg"
+}
+
+### Update the film identified by 5
+PATCH {{baseUrl}}/films/5
+Content-Type: application/json
+
+{
+    "title":"test patch"
+}
+
+### Delete a film
+DELETE {{baseUrl}}/films/4
+
+### Update the film identified by 5
+PUT {{baseUrl}}/films/12
+Content-Type: application/json
+
+{
+    "title":"test put"
+}
+
+### Update the film identified by 5
+PUT {{baseUrl}}/films/12
+Content-Type: application/json
+
+{
+  "title": "The mobie",
+  "director": "Lana",
+  "duration": 12,
+  "description": "https://www.imdb.com/title/tt0133093/",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg"
+}
