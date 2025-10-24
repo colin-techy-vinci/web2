@@ -1,0 +1,41 @@
+@baseUrl = http://localhost:3000
+### Read all texts with File variable
+GET {{baseUrl}}/texts
+###
+GET {{baseUrl}}/texts/9ff8c838-a145-4018-a4e2-949f36fa65b6
+###
+GET {{baseUrl}}/texts/9ff8c838-a145-4018-a4e2
+###
+POST {{baseUrl}}/texts
+Content-Type: application/json
+
+{
+  "content" : "test",
+  "level" : "easy"
+}
+###
+POST {{baseUrl}}/texts
+Content-Type: application/json
+
+{
+  "content" : "test"
+}
+###
+POST {{baseUrl}}/texts
+Content-Type: application/json
+
+{
+  "content" : "test",
+  "level" : "test"
+}
+###
+DELETE  {{baseUrl}}/texts/7c614ec7-ac6d-4690-b506-6f9b1419d87d
+###
+DELETE  {{baseUrl}}/texts/7c614ec7-ac6d-4690-b50
+###
+PUT {{baseUrl}}/texts/5f0e8f87-38b9-4444-b0ae-fe444a71f025
+Content-Type: application/json
+
+{
+  "level" : "hard"
+}
