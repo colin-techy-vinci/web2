@@ -1,10 +1,19 @@
-import { useState } from 'react'
-const ClickCounter = () => {
+import { useState } from "react";
+interface ClickProps {
+  title: string;
+  message: string;
+}
+const ClickCounter = ({ title, message }: ClickProps) => {
   const [count, setCount] = useState(0);
+  const ClickHandle = () => {
+    setCount((count) => count + 1);
+  };
   return (
-    <button onClick={() => setCount((count) => count + 1)}>
-      count is {count}
-    </button>
+    <footer>
+      <h1>{title}</h1>
+      <button onClick={ClickHandle}>count is {count}</button>
+      <p>{count >= 10 ? message : ""}</p>
+    </footer>
   );
 };
 
