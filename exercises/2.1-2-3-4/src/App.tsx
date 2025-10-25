@@ -1,3 +1,18 @@
+interface Movie {
+  title : string;
+  director : string;
+}
+
+interface PageTitleProps {
+  title : string;
+}
+
+interface CinemaProps {
+  name : string;
+  movie1 : Movie;
+  movie2 : Movie;
+}
+
 const App = () => {
   const pageTitle = "Informations sur les films dans les cinémas";
 
@@ -33,11 +48,10 @@ const App = () => {
   );
 };
 
-const PageTitle = (pageTitle : {title : string}) => {
-  return (<h1>{pageTitle.title}</h1>);
+const PageTitle = ({title} : PageTitleProps) => {
+  return (<h1>{title}</h1>);
 }
-const Cinema = ({name, movie1, movie2} : 
-  {name : string; movie1 : {title : string; director : string}; movie2 : {title : string; director : string}}) => {
+const Cinema = ({name, movie1, movie2} : CinemaProps) => {
   return(
     <div>
       <h2>{name}</h2>
