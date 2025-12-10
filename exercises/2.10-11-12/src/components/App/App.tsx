@@ -5,6 +5,7 @@ import type { Film, MovieContext } from "../../type";
 import { useState } from "react";
 const defaultfilms: Film[] = [
   {
+    id : 1,
     titre: "Inception",
     director: "Christopher Nolan",
     duration: 148,
@@ -12,8 +13,10 @@ const defaultfilms: Film[] = [
     description:
       "Un voleur s'infiltre dans les rêves pour y implanter des idées.",
     budget: 160000000,
+    favorite: true,
   },
   {
+    id : 2,
     titre: "The Godfather",
     director: "Francis Ford Coppola",
     duration: 175,
@@ -21,8 +24,10 @@ const defaultfilms: Film[] = [
     description:
       "L’histoire du clan Corleone, une puissante famille mafieuse italienne.",
     budget: 160000000,
+    favorite: false,
   },
   {
+    id : 3,
     titre: "Interstellar",
     director: "Christopher Nolan",
     duration: 169,
@@ -30,8 +35,10 @@ const defaultfilms: Film[] = [
     description:
       "Un groupe d’astronautes voyage à travers un trou de ver à la recherche d’un nouveau foyer pour l’humanité.",
     budget: 160000000,
+    favorite: true,
   },
   {
+    id : 4,
     titre: "Parasite",
     director: "Bong Joon-ho",
     duration: 132,
@@ -39,8 +46,10 @@ const defaultfilms: Film[] = [
     description:
       "Une famille pauvre infiltre la maison d’une famille riche sous de fausses identités.",
     budget: 160000000,
+    favorite: false,
   },
   {
+    id : 5,
     titre: "The Matrix",
     director: "Lana Wachowski, Lilly Wachowski",
     duration: 136,
@@ -48,6 +57,7 @@ const defaultfilms: Film[] = [
     description:
       "Un hacker découvre que la réalité est une simulation contrôlée par des machines.",
     budget: 160000000,
+    favorite: true,
   },
 ];
 const NavBar = () => {
