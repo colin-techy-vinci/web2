@@ -6,5 +6,10 @@ interface Film {
   description?: string;
   budget?: number;
 }
+interface MovieContext {
+  films: Film[];
+  setFilms: (films: Film[]) => void;
+  onMovieAdded: (newFilm: Film) => void;
+}
 
-export type { Film };
+export type { Film, MovieContext };
