@@ -56,7 +56,7 @@ const App = () => {
           "Content-Type": "application/json",
         },
       };
-      const response = await fetch("http://localhost:3000/pizzas", options); // fetch retourne une "promise" => on attend la réponse
+      const response = await fetch("/api/pizzas", options); // fetch retourne une "promise" => on attend la réponse
       if (!response.ok)
         throw new Error(
           `fetch error : ${response.status} : ${response.statusText}`
@@ -103,14 +103,14 @@ const App = () => {
     </div>
   );
 };
-
+/*
 const nextPizzaId = (pizzas: Pizza[]) => {
   const ids = pizzas.map((pizza) => pizza.id);
   return Math.max(...ids) + 1;
-};
+};*/
 async function getAllPizzas() {
     try {
-      const response = await fetch("http://localhost:3000/pizzas");
+      const response = await fetch("/api/pizzas");
 
       if (!response.ok)
         throw new Error(
