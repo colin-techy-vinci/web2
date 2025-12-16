@@ -7,6 +7,7 @@ const RandomDog = () => {
     const [dogImage, setDogImage] = useState<Dog | undefined>()
     useEffect(() => {
         fetchDogImage();
+        setInterval(fetchDogImage, 5000);
     }, [])
     const fetchDogImage = async () => {
         try {
