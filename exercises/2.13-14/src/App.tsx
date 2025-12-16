@@ -3,7 +3,8 @@ import type { Joke } from "./type";
 
 function App() {
   const [joke, setJoke] = useState<Joke>()
-  useEffect(() => {
+
+  const fetchJoke = () => {
     fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw&type=single")
       .then((response) => {
         if (!response.ok)
@@ -14,7 +15,12 @@ function App() {
       .catch((err) => {
         console.error("Jokes::error", err);
       })
+  };
+  useEffect(() => {
+    fetchJoke();
+    setInterval(fetchJoke, 10000);
   }, []);
+
   return(
     <p>{joke?.category} {joke?.joke}</p>
   )
