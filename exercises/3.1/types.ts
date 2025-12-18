@@ -32,6 +32,13 @@ interface Film {
   imageUrl : string | undefined;
 }
 
+interface Comment {
+  filmId : number;
+  username: string;
+  comment: string;
+
+}
+
 type NewFilm = Omit<Film, "id">;
 export type {
   Film,
@@ -41,4 +48,5 @@ export type {
   PotentialUser,
   AuthenticatedRequest,
   JwtPayload,
+  Comment,
 };
