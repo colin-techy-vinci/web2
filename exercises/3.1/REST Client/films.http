@@ -1,48 +1,13 @@
 @baseUrl = http://localhost:3000
-
-### Try to login an unknow user
-
-POST {{baseUrl}}/auths/login
-Content-Type: application/json
-
-{
-    "username":"unknown",
-    "password":"admin"
-}
-
-### Login the default admin
-# @name admin
-POST {{baseUrl}}/auths/login
-Content-Type: application/json
-
-{
-    "username":"admin",
-    "password":"admin"
-}
-
-
-### Create the manager user
-POST {{baseUrl}}/auths/register
-Content-Type: application/json
-
-{
-    "username":"manager",
-    "password":"manager"
-}
-
-### Login the manager user
-POST {{baseUrl}}/auths/login
-Content-Type: application/json
-
-{
-    "username":"manager",
-    "password":"manager"
-}
+### Read all films with File variable
+GET {{baseUrl}}/films
 
 ###
+GET {{baseUrl}}/films/3
+
+### Create a drink
 POST {{baseUrl}}/films
 Content-Type: application/json
-Authorization: {{admin.response.body.token}}
 
 {
   "title": "The Matrix",
@@ -55,16 +20,13 @@ Authorization: {{admin.response.body.token}}
 ### Update the film identified by 5
 PATCH {{baseUrl}}/films/4
 Content-Type: application/json
-Authorization: {{admin.response.body.token}}
 
 {
     "title":"test patch"
 }
 
 ### Delete a film
-
 DELETE {{baseUrl}}/films/4
-Authorization: {{admin.response.body.token}}
 
 ### Update the film identified by 5
 PUT {{baseUrl}}/films/12
